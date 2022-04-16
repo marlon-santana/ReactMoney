@@ -22,13 +22,14 @@ export function Summary () {
             <strong> - R$500</strong>
         </div>
 
-        <div>
+        <div className="hightlight-background">
             <header>
                 <p>Total</p>
                  <img src={total}   />
             </header>
             <strong>R$1.000,00</strong>
         </div>
+
         </Container>
     )
 }
