@@ -1,3 +1,5 @@
+import { Dashboard } from "./conponents/dashboard";
+import { Header } from "./conponents/Header";
 
 
 
@@ -5,8 +7,9 @@
 export function App() {
   return (
     <>
-    <h1>React Money</h1>
-    <h1>React Money</h1>
+    <Header />
+    <Dashboard />
+    
    
     </>
   )
