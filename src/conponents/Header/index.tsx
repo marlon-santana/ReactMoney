@@ -1,31 +1,20 @@
 import LogoImg from '../../assets/logo.svg'
 import { Container,Content } from './style';
-import Modal from 'react-modal';
-import { useState } from 'react';
 
 
-export function Header () {
 
-    const [modalIsOpen, setIsOpen] = useState(false);
+interface HeaderProps {
+    onOpenModal: () => void;
+}
 
-    function openModal() {
-        setIsOpen(true);
-      }
+export function Header ({ onOpenModal }: HeaderProps) {
 
-      function closeModal() {
-        setIsOpen(false);
-      }
+  
 return (
     <Container>
     <Content>
     <img src={LogoImg}  alt="rocketmoney" />
-    <button onClick={() => openModal()}>Nova Transação</button>
-    <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-      >
-          <h2>modal aberto</h2>
-      </Modal>
+    <button onClick={onOpenModal}>Nova Transação</button>
     </Content>
     </Container>
 
