@@ -2,7 +2,8 @@ import { Dashboard } from "./conponents/dashboard";
 import { Header } from "./conponents/Header";
 import { createServer  } from "miragejs";
 import { useState } from "react";
-import Modal from 'react-modal';
+import { TransactionModal } from "./conponents/transactionModal";
+
 
 createServer({
   routes() {
@@ -37,14 +38,10 @@ export function App() {
     <>
     <Header onOpenModal={() => openModal()} />
     <Dashboard />
-    <Modal 
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-      >
-          <h2>modal aberto</h2>
-      </Modal>
+    <TransactionModal
+    isOpen={modalIsOpen}
+    onRequestClose={ () => closeModal()} />
     
-   
     </>
   )
     
