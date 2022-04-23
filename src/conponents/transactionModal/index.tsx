@@ -3,7 +3,7 @@ import closeIcon from "../../assets/close.svg";
 import incomeIcon from "../../assets/income.svg";
 import outcomeIcon from "../../assets/outcome.svg";
 import Modal from 'react-modal';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 
 interface TransactionsModalProps {
@@ -13,7 +13,20 @@ interface TransactionsModalProps {
 
 export function TransactionModal ({isOpen, onRequestClose}:TransactionsModalProps) {
 
+    const [title, setTitle] = useState('')
+    const [value, setValue] = useState(0)
+    const [category, setCategory] = useState('')
     const [type, setType ] =  useState('deposit')
+
+
+    function newTransaction (event: FormEvent) {
+      event.preventDefault();
+      
+    };
+
+    
+
+
     return (
         
         <Modal 
@@ -30,16 +43,22 @@ export function TransactionModal ({isOpen, onRequestClose}:TransactionsModalProp
       >
         <img src={closeIcon} alt="Fechar modal" />
       </button>
-      <Container>
+
+      <Container onSubmit={newTransaction} >
 
       <h2>Cadastrar transações</h2>
             
             <input 
-            placeholder='Titulo'/>
+            placeholder='Titulo'
+            value={title}
+            onChange={event => setTitle(event.target.value) }/>
     
             <input 
             type='number'
-            placeholder='preço'/>
+            placeholder='preço'
+            value={value}
+            onChange={event => setValue(Number(event.target.value)) }
+            />
 
         <ContainerButtons>
         <RadioBox
@@ -70,7 +89,10 @@ export function TransactionModal ({isOpen, onRequestClose}:TransactionsModalProp
        
 
         <input 
-        placeholder='categoria'/>
+        placeholder='categoria'
+        value={category}
+        onChange={event => setCategory(event.target.value) }
+        />
 
         <button
         type='submit'
