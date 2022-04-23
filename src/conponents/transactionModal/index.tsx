@@ -4,6 +4,7 @@ import incomeIcon from "../../assets/income.svg";
 import outcomeIcon from "../../assets/outcome.svg";
 import Modal from 'react-modal';
 import { FormEvent, useState } from 'react';
+import { api } from '../../services/api';
 
 
 interface TransactionsModalProps {
@@ -21,7 +22,17 @@ export function TransactionModal ({isOpen, onRequestClose}:TransactionsModalProp
 
     function newTransaction (event: FormEvent) {
       event.preventDefault();
-      
+
+
+      const data = {
+        title,
+        value,
+        category,
+        type
+      }
+
+      api.post('/transactions',data)
+
     };
 
     

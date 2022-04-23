@@ -1,24 +1,25 @@
 import { Dashboard } from "./conponents/dashboard";
 import { Header } from "./conponents/Header";
-import { createServer  } from "miragejs";
+import { createServer, Model  } from "miragejs";
 import { useState } from "react";
 import { TransactionModal } from "./conponents/transactionModal";
 
 
 createServer({
+  models: {
+    transaction: Model
+  },
+
   routes() {
     this.namespace = 'api';
     this.get('/transactions', () => {
-      return [
-        {
-          id: 1,
-          title: 'transaction 1',
-          amount: 400,
-          type: 'deposit',
-          categori: 'food',
-          createdAt: new Date(),
-        }
-      ]
+      return this.schema.all('transaction')
+    })
+
+    this.post('/transactions', (schema,request) => {
+      const data = JSON.parse(request.requestBody)
+      return  schema.create('transaction',data)
+        
     })
   }
 })
