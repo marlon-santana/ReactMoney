@@ -1,13 +1,26 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Container } from './style';
 import { api } from '../../services/api';
 
 
 
 export function TransactionsTable () {
+
+    interface Transaction {
+        id: number;
+        title: String;
+        value: Number;
+        amount: number;
+        category: string;
+        type: string;
+        createdAt: String;
+    }
+
+    const [transactions, setTransactions ] = useState<Transaction[]>([])
+
     useEffect(() => { 
         api.get('http://localhost:3000/api/transactions')
-        .then(response => console.log(response.data))
+        .then(response => setTransactions(response.data.transactions))
     
     },[])
 
@@ -22,27 +35,22 @@ export function TransactionsTable () {
                         <th>Categoria</th>
                         <th>Data</th>
                     </tr>
-                    <tr>
-                        <td>notebook</td>
-                        <td className='withdraw'>R$500</td>
-                        <td>compras</td>
-                        <td>16/04/2021</td>
-                    </tr>
+                    </thead>
+                    <tbody>
+                    {transactions.map(transaction => {
+                        return (
+                        <tr key={transaction.id}>
+                            <td>{transaction.title}</td>
+                            <td className={transaction.type}>{transaction.amount}</td>
+                            <td>{transaction.category}</td>
+                            <td>{transaction.createdAt}</td>
+                        </tr>
 
-                    <tr>
-                        <td>Desenvolvimento</td>
-                        <td className='deposit'>R$1.000</td>
-                        <td>serviços</td>
-                        <td>20/04/2021</td>
-                    </tr>
-
-                    <tr>
-                        <td>internet</td>
-                        <td className='withdraw'>R$200</td>
-                        <td>contas</td>
-                        <td>30/04/2021</td>
-                    </tr>
-                </thead>
+                        )
+                    })}
+                   
+                    </tbody>
+               
             </table>
         </Container>
     )

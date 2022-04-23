@@ -35,8 +35,6 @@ export function TransactionModal ({isOpen, onRequestClose}:TransactionsModalProp
 
     };
 
-    
-
 
     return (
         
