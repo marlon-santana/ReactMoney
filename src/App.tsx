@@ -3,6 +3,8 @@ import { Header } from "./conponents/Header";
 import { createServer, Model  } from "miragejs";
 import { useState } from "react";
 import { TransactionModal } from "./conponents/transactionModal";
+import { TransactionsContext } from "./TransationsContext";
+import { GlobalStyle } from './styles/global';
 
 
 createServer({
@@ -77,14 +79,22 @@ export function App() {
       setIsOpen(false);
     }
   return (
-    <>
+    
+    <TransactionsContext.Provider value={[1]}>
+
     <Header onOpenModal={() => openModal()} />
+
     <Dashboard />
+
     <TransactionModal
     isOpen={modalIsOpen}
     onRequestClose={ () => closeModal()} />
+
+    < GlobalStyle />
     
-    </>
+    </TransactionsContext.Provider>
+    
+    
   )
     
 }
