@@ -33,7 +33,11 @@ export function TransactionModal ({isOpen, onRequestClose}:TransactionsModalProp
         category,
         type,
       })
-
+      onRequestClose();
+      setTitle('')
+      setamount(0)
+      setCategory('')
+      setType('deposit')
     };
 
 
