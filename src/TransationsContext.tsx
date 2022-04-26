@@ -50,7 +50,6 @@ export const TransactionsContext = createContext<TransactionContextData>({} as T
 
         async function createTransactions (transactionInput: TransactionInput ) {
            
-        
              const response = await api.post('/transactions',{
                  ...transactionInput,
                 createdAt: new Date()
