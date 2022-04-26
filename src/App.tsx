@@ -3,7 +3,7 @@ import { Header } from "./conponents/Header";
 import { createServer, Model  } from "miragejs";
 import { useState } from "react";
 import { TransactionModal } from "./conponents/transactionModal";
-import { TransactionsProvider } from "./TransationsContext";
+import { TransactionsProvider } from "./hooks/useTransationsContext";
 import { GlobalStyle } from './styles/global';
 
 

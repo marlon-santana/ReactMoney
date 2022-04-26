@@ -4,7 +4,7 @@ import incomeIcon from "../../assets/income.svg";
 import outcomeIcon from "../../assets/outcome.svg";
 import Modal from 'react-modal';
 import { FormEvent, useContext, useState } from 'react';
-import { TransactionsContext } from '../../TransationsContext';
+import { TransactionsContext, useTransactions } from '../../hooks/useTransationsContext';
 
 
 interface TransactionsModalProps {
@@ -16,7 +16,7 @@ interface TransactionsModalProps {
 
 export function TransactionModal ({isOpen, onRequestClose}:TransactionsModalProps) {
 
-  const { createTransactions } = useContext(TransactionsContext );
+  const { createTransactions } = useTransactions();
 
     const [title, setTitle] = useState('')
     const [amount, setamount] = useState(0)
