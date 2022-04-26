@@ -3,8 +3,8 @@ import closeIcon from "../../assets/close.svg";
 import incomeIcon from "../../assets/income.svg";
 import outcomeIcon from "../../assets/outcome.svg";
 import Modal from 'react-modal';
-import { FormEvent, useState } from 'react';
-import { api } from '../../services/api';
+import { FormEvent, useContext, useState } from 'react';
+import { TransactionsContext } from '../../TransationsContext';
 
 
 interface TransactionsModalProps {
@@ -12,26 +12,27 @@ interface TransactionsModalProps {
     onRequestClose: () => void;
 }
 
+
+
 export function TransactionModal ({isOpen, onRequestClose}:TransactionsModalProps) {
 
+  const { createTransactions } = useContext(TransactionsContext );
+
     const [title, setTitle] = useState('')
-    const [value, setValue] = useState(0)
+    const [amount, setamount] = useState(0)
     const [category, setCategory] = useState('')
     const [type, setType ] =  useState('deposit')
 
 
-    function newTransaction (event: FormEvent) {
+    async function newTransaction (event: FormEvent) {
       event.preventDefault();
 
-
-      const data = {
+      await createTransactions({
         title,
-        value,
+        amount,
         category,
-        type
-      }
-
-      api.post('/transactions',data)
+        type,
+      })
 
     };
 
@@ -65,8 +66,8 @@ export function TransactionModal ({isOpen, onRequestClose}:TransactionsModalProp
             <input 
             type='number'
             placeholder='preço'
-            value={value}
-            onChange={event => setValue(Number(event.target.value)) }
+            value={amount}
+            onChange={event => setamount(Number(event.target.value)) }
             />
 
         <ContainerButtons>
