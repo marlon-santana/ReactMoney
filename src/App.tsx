@@ -3,7 +3,7 @@ import { Header } from "./conponents/Header";
 import { createServer, Model  } from "miragejs";
 import { useState } from "react";
 import { TransactionModal } from "./conponents/transactionModal";
-import { TransactionsContext } from "./TransationsContext";
+import { TransactionsProvider } from "./TransationsContext";
 import { GlobalStyle } from './styles/global';
 
 
@@ -28,30 +28,6 @@ createServer({
               createdAt: new Date('2021-04-10 10:00:00') })
     },
 
-  // seeds(server) {
-  //   server.db.loadData({
-  //     transctions: [
-  //       {
-  //         id:1,
-  //         title: 'desenvolvimento de softwear',
-  //         type: 'deposit',
-  //         category: 'freelancer',
-  //         amount: 2000,
-  //         createdAt: new Date('2021-02-12 09:00:00')
-
-  //       },
-  //       {
-  //         id:1,
-  //         title: 'playstation',
-  //         type: 'withdraw',
-  //         category: 'lazer',
-  //         amount: 5000,
-  //         createdAt: new Date('2021-04-10 10:00:00')
-
-  //       }
-  //     ]
-  //   })
-  // },
 
   routes() {
     this.namespace = 'api';            // inicio na rota
@@ -80,8 +56,7 @@ export function App() {
     }
   return (
     
-    <TransactionsContext.Provider value={[1]}>
-
+    <TransactionsProvider >
     <Header onOpenModal={() => openModal()} />
 
     <Dashboard />
@@ -92,7 +67,8 @@ export function App() {
 
     < GlobalStyle />
     
-    </TransactionsContext.Provider>
+    </TransactionsProvider>
+
     
     
   )
