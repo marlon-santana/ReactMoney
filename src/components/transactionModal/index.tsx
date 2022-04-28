@@ -4,7 +4,7 @@ import incomeIcon from "../../assets/income.svg";
 import outcomeIcon from "../../assets/outcome.svg";
 import Modal from 'react-modal';
 import { FormEvent, useContext, useState } from 'react';
-import { TransactionsContext, useTransactions } from '../../hooks/useTransationsContext';
+import {  useTransactions } from '../../hooks/useTransationsContext';
 
 
 interface TransactionsModalProps {

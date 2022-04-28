@@ -22,5 +22,8 @@
     },
     "include": [
       "src"
+, "react-app-env.d.ts"    ],
+    "files": [
+      "src/styles/styled.d.ts"
     ]
   }

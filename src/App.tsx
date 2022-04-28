@@ -1,10 +1,15 @@
-import { Dashboard } from "./conponents/dashboard";
-import { Header } from "./conponents/Header";
+import { Dashboard } from "./components/dashboard";
+import { Header } from "./components/Header";
 import { createServer, Model  } from "miragejs";
 import { useState } from "react";
-import { TransactionModal } from "./conponents/transactionModal";
+import { TransactionModal } from "./components/transactionModal";
 import { TransactionsProvider } from "./hooks/useTransationsContext";
 import { GlobalStyle } from './styles/global';
+
+import { ThemeProvider } from 'styled-components';
+import light from "./styles/themes/light";
+import dark from "./styles/themes/dark";
+
 
 
 createServer({
@@ -43,9 +48,28 @@ createServer({
   }
 })
 
+
+export interface DefaultTheme {
+  title: string;
+
+  colors: {
+      primary: string,
+      secundary:  string;
+
+      background:  string,
+      text:  string;
+  }
+}
+
 export function App() {
 
   const [modalIsOpen, setIsOpen] = useState(false);
+    const [theme, setTheme ] = useState(light)
+
+  const toogleTheme = () => {
+    setTheme(theme.title === 'light' ? light : dark)
+
+  };
 
   function openModal() {
       setIsOpen(true);
@@ -55,9 +79,10 @@ export function App() {
       setIsOpen(false);
     }
   return (
-    
+    <ThemeProvider theme={theme}>
     <TransactionsProvider >
-    <Header onOpenModal={() => openModal()} />
+    <Header toogleTheme={() => toogleTheme()}
+     onOpenModal={() => openModal()} />
 
     <Dashboard />
 
@@ -68,6 +93,7 @@ export function App() {
     < GlobalStyle />
     
     </TransactionsProvider>
+    </ThemeProvider>
 
     
     
