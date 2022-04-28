@@ -52,6 +52,11 @@ h1, h2, h3, h4, h5, h6, strong {
     cursor: not-allowed;
 }
 
+.react-switch {
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
 .react-modal-overlay{
     background: rgba(0,0,0,0.5);
     

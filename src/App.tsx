@@ -64,12 +64,23 @@ export interface DefaultTheme {
 export function App() {
 
   const [modalIsOpen, setIsOpen] = useState(false);
-    const [theme, setTheme ] = useState(light)
+  const [theme, setTheme ] = useState(light);
 
-  const toogleTheme = () => {
-    setTheme(theme.title === 'light' ? light : dark)
-
+  const toggleTheme = () => {
+    setTheme(theme.title === 'light' ? dark : light);
   };
+
+  // const toogleTheme = () => {
+  //   if(theme.title === 'light') {
+  //     setTheme(light)
+  //   }else {
+  //     setTheme(dark)
+  //   }
+    
+    console.log(theme)
+  
+  
+//theme.title === 'light' ? light : dark
 
   function openModal() {
       setIsOpen(true);
@@ -78,10 +89,11 @@ export function App() {
     function closeModal() {
       setIsOpen(false);
     }
+    
   return (
     <ThemeProvider theme={theme}>
     <TransactionsProvider >
-    <Header toogleTheme={() => toogleTheme()}
+    <Header toggleTheme={() => toggleTheme()}
      onOpenModal={() => openModal()} />
 
     <Dashboard />
