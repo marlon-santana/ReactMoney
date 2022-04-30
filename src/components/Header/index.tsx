@@ -11,8 +11,23 @@ interface HeaderProps {
     toggleTheme(): void;
 }
 
+export interface Theme {
+    title: string;
+  
+    colors: {
+      red: string,
+      blue: string,
+      bluelight: string
+      green: string
+      shape: string
+      texttitle: string
+      textbody: string
+      background: string
+    },
+  }
+
 export function Header ({ onOpenModal, toggleTheme}: HeaderProps) {
-    const {colors, title } = useContext(ThemeContext)
+    const {title } = useContext(ThemeContext)
 
   
 return (
@@ -21,7 +36,7 @@ return (
     <img src={LogoImg}  alt="rocketmoney" />
     <button onClick={onOpenModal}>Nova Transação</button>
     <Switch
-    onClick={()=> toggleTheme()}
+    onClick={toggleTheme}
     onChange={toggleTheme}
     checked={title === "light"}
     className="react-switch"

@@ -4,7 +4,7 @@ import { createServer, Model  } from "miragejs";
 import { useState } from "react";
 import { TransactionModal } from "./components/transactionModal";
 import { TransactionsProvider } from "./hooks/useTransationsContext";
-import GlobalStyle  from './styles/global';
+import { GlobalStyle }  from './styles/global';
 
 import { ThemeProvider } from 'styled-components';
 import light from "./styles/themes/light";
@@ -49,20 +49,6 @@ createServer({
 })
 
 
-export interface DefaultTheme {
-  title: string;
-
-  colors: {
-    red: string,
-    blue: string,
-    bluelight: string
-    green: string
-    shape: string
-    texttitle: string
-    textbody: string
-    background: string
-  },
-}
 
 export function App() {
 
@@ -83,22 +69,22 @@ export function App() {
     }
     
   return (
-    
-    <TransactionsProvider >
+
     <ThemeProvider theme={theme}>
-    < GlobalStyle />
+    <TransactionsProvider >
+    
+    
     <Header toggleTheme={() => toggleTheme()}
      onOpenModal={() => openModal()} />
-
+    < GlobalStyle />
     <Dashboard />
 
     <TransactionModal
     isOpen={modalIsOpen}
     onRequestClose={ () => closeModal()} />
 
-    
+    </TransactionsProvider> 
     </ThemeProvider>
-    </TransactionsProvider>
     
 
     

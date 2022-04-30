@@ -1,10 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 
-
-
-
-export default createGlobalStyle `
+export const GlobalStyle  = createGlobalStyle `
 :root {
     --red: #e52e4d;
     --blue: #5429cc;
@@ -35,7 +32,7 @@ html {
 }
 
 body {
-    background: var(---background);
+    background:var(--background);
     --webkit-font-smoothing: antialiased;
     
 }
