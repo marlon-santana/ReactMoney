@@ -9,10 +9,10 @@ gap: 2rem;
 margin-top: -10rem ;
 
 div {
-    background: var(--shape);
+    background: white;
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
-    color: var(--text-title);
+    color:   ${props => props.theme.colors.texttitle};//var(--text-title);
 
 
     header {

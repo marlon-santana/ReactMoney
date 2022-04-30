@@ -2,7 +2,9 @@ import { createGlobalStyle } from "styled-components";
 
 
 
-export const GlobalStyle = createGlobalStyle `
+
+
+export default createGlobalStyle `
 :root {
     --red: #e52e4d;
     --blue: #5429cc;
@@ -13,6 +15,8 @@ export const GlobalStyle = createGlobalStyle `
     --text-body: #969cb3;
     --background: #f0f2f5;
 }
+
+
 
 * {
     margin: 0 ;
@@ -31,8 +35,9 @@ html {
 }
 
 body {
-    background: var(--background);
+    background: var(---background);
     --webkit-font-smoothing: antialiased;
+    
 }
 button {
     cursor: pointer ;

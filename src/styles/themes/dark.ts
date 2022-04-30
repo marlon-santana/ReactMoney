@@ -2,9 +2,14 @@ export default  {
     title: 'dark',
 
     colors: {
-        primary:'black',
-        secundary: '187795',
-        background: 'black',
-        text: '#969cb3',
-    }
+        red: 'e52e4d',
+        blue: '#180D1F',
+        bluelight: '6933ff',
+        green: '33cc95',
+        shape: 'ffffff',
+        texttitle: '363f5f',
+        textbody: '969cb3',
+        background: '#180D1F',
+      },
+      
 }
