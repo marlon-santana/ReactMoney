@@ -1,8 +1,24 @@
 import { createGlobalStyle } from "styled-components";
 
 
-export const GlobalStyle  = createGlobalStyle `
-:root {
+interface Theme {
+  title: string,
+
+  colors: {
+    red: string,
+    blue: string,
+    bluelight: string,
+    green: string,
+    shape: string,
+    texttitle: string,
+    textbody: string,
+    background: string,
+  },
+}
+
+export const GlobalStyle  = createGlobalStyle<{theme: Theme}> `
+
+ :root {
     --red: #e52e4d;
     --blue: #5429cc;
     --blue-light: #6933ff;
@@ -10,8 +26,8 @@ export const GlobalStyle  = createGlobalStyle `
     --shape: #ffffff;
     --text-title: #363f5f;
     --text-body: #969cb3;
-    --background: #f0f2f5;
-}
+    --background: #f0f2f5; 
+  }
 
 
 
@@ -32,7 +48,7 @@ html {
 }
 
 body {
-    background:var(--background);
+    background: var(--background);
     --webkit-font-smoothing: antialiased;
     
 }
