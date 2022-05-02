@@ -1,3 +1,4 @@
+
 export default  {
     title: 'dark',
 
@@ -9,7 +10,7 @@ export default  {
         shape: 'ffffff',
         texttitle: '363f5f',
         textbody: '969cb3',
-        background: '#180D1F',
+        background: '#000000',
       },
       
 }

@@ -1,5 +1,5 @@
 import LogoImg from '../../assets/logo.svg'
-import { Container,Content } from './style';
+import { Container,Content,SwitchBotom } from './style';
 import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
 import { useContext } from 'react';
@@ -34,7 +34,7 @@ return (
     <Container>
     <Content>
     <img src={LogoImg}  alt="rocketmoney" />
-    <button onClick={onOpenModal}>Nova Transação</button>
+    <SwitchBotom>
     <Switch
     onClick={toggleTheme}
     onChange={toggleTheme}
@@ -51,8 +51,9 @@ return (
     handleDiameter={20}
     // onColor={colors.primary}
     // offColor={colors.secundary}
-    
     />
+    <button onClick={onOpenModal}>Nova Transação</button>
+    </SwitchBotom>
     </Content>
     </Container>
 

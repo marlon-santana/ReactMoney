@@ -12,6 +12,10 @@ import dark from "./styles/themes/dark";
 
 
 
+
+
+
+
 createServer({
   models: {
     transaction: Model  //cria entidade de banco de dados chamada transaction
@@ -48,12 +52,11 @@ createServer({
   }
 })
 
-
-
 export function App() {
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [theme, setTheme ] = useState(light);
+  console.log(theme)
 
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light);
@@ -67,30 +70,27 @@ export function App() {
     function closeModal() {
       setIsOpen(false);
     }
+   
+    
+    
     
   return (
 
     <ThemeProvider theme={theme}>
     <TransactionsProvider >
-    
-    
     <Header toggleTheme={() => toggleTheme()}
      onOpenModal={() => openModal()} />
     < GlobalStyle />
     <Dashboard />
-
     <TransactionModal
     isOpen={modalIsOpen}
     onRequestClose={ () => closeModal()} />
-
     </TransactionsProvider> 
     </ThemeProvider>
-    
-
-    
-    
   )
-    
-}
+
+};
+
+
 
 

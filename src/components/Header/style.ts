@@ -7,6 +7,16 @@ background: ${props => props.theme.colors.blue};
 
 `
 
+export const SwitchBotom = styled.div`
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction: row;
+
+
+
+` 
+
 export const Content = styled.div `
 
 max-width: 1120px;
@@ -18,6 +28,7 @@ max-width: 1120px;
  justify-content: space-between;
 
  button {
+     margin-left: 10px;
      font-size:  1rem;
      color: #fff ;
      background: var(--blue-light);
