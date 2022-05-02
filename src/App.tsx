@@ -9,6 +9,7 @@ import { GlobalStyle }  from './styles/global';
 import { ThemeProvider } from 'styled-components';
 import light from "./styles/themes/light";
 import dark from "./styles/themes/dark";
+import { Home } from "./components/home/Home";
 
 
 
@@ -82,6 +83,11 @@ export function App() {
      onOpenModal={() => openModal()} />
     < GlobalStyle />
     <Dashboard />
+    
+    <Home 
+    isOpen={modalIsOpen}
+    onRequestClose={ () => closeModal()} />
+
     <TransactionModal
     isOpen={modalIsOpen}
     onRequestClose={ () => closeModal()} />
