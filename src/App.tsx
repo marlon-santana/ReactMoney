@@ -6,10 +6,12 @@ import { TransactionModal } from "./components/transactionModal";
 import { TransactionsProvider } from "./hooks/useTransationsContext";
 import { GlobalStyle }  from './styles/global';
 
+import { Outlet,Link } from "react-router-dom";
+
 import { ThemeProvider } from 'styled-components';
 import light from "./styles/themes/light";
 import dark from "./styles/themes/dark";
-import { Home } from "./components/home/Home";
+
 
 
 
@@ -53,6 +55,7 @@ createServer({
   }
 })
 
+
 export function App() {
 
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -83,11 +86,10 @@ export function App() {
      onOpenModal={() => openModal()} />
     < GlobalStyle />
     <Dashboard />
-    
-    <Home 
-    isOpen={modalIsOpen}
-    onRequestClose={ () => closeModal()} />
 
+    <Link to= '/Home'>HOME</Link>
+    <Outlet/>
+  
     <TransactionModal
     isOpen={modalIsOpen}
     onRequestClose={ () => closeModal()} />

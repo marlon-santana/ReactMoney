@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { App } from './App';
 import {GlobalStyle } from './styles/global';
 
+//import { render } from "react-dom";
+import { BrowserRouter,Routes, Route, } from "react-router-dom";
+import {Home} from "./routes/Home";
+
 
 
 
@@ -10,10 +14,14 @@ import {GlobalStyle } from './styles/global';
 
 const root = ReactDOM.createRoot(document.getElementById('root')as Element);
 root.render(
-  <React.StrictMode>
-    <App />
+  <BrowserRouter>
+  <Routes>
+  <Route path="/" element={<App />} />
+  <Route path="Home" element={<Home />} />
+  </Routes>
     < GlobalStyle />
-  </React.StrictMode>
+
+  </BrowserRouter>
 );
 
 
