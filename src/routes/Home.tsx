@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import  { GlobalStyle } from '../styles/global';
+import Img from "../assets/fundo.jpg"
 
 
 
@@ -8,8 +10,9 @@ export function Home() {
   
     
     <>
-        <h1>Aqui é a home</h1>
         <Link to= '/'>App</Link>
+        <img src={Img} />
+        <GlobalStyle />
         
      </>
     )
