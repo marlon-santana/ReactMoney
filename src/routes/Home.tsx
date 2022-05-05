@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
-import  { GlobalStyle } from '../styles/global';
-import Img from "../assets/fundo.jpg"
+
+
+import  LogoImg  from "../assets/logo.svg";
+import { Container, Content, WrapperContainer } from "./styles";
+
 
 
 
@@ -8,13 +11,23 @@ import Img from "../assets/fundo.jpg"
 export function Home() {
     return (
   
-    
-    <>
-        <Link to= '/'>App</Link>
-        <img src={Img} />
-        <GlobalStyle />
+        <WrapperContainer>
+       <Container>
+        <Content> 
+        <Link to= '/'>voltar</Link>
+        <img  src={LogoImg}  alt="rocketmoney"  /> 
+      
+        <form>
+            <input placeholder="login"/>
+            <input placeholder="senha"/>
+        </form>
+        </Content>
+        </Container>
+        </WrapperContainer>
+      
+      
         
-     </>
+
     )
      
 }

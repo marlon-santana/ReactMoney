@@ -10,7 +10,6 @@ import {Home} from "./routes/Home";
 
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root')as Element);
 root.render(
   <BrowserRouter>

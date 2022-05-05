@@ -9,6 +9,7 @@ import { useContext } from 'react';
 interface HeaderProps {
     onOpenModal: () => void;
     toggleTheme(): void;
+    
 }
 
 export interface Theme {
