@@ -16,7 +16,6 @@ export function Home() {
         <WrapperContainer>
        <Container>
         <Content> 
-        <Link to= '/'>voltar</Link>
         <img  src={LogoImg}  alt="rocketmoney"  /> 
         </Content>
         <FormContainer>
@@ -26,6 +25,7 @@ export function Home() {
             <input placeholder="senha"/>
             <Link to= '/'> <button>ENTRAR</button></Link>
         </form>
+        <a>Cadastrar senha</a>
         </FormContainer>
       
         </Container>

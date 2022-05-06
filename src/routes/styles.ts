@@ -31,6 +31,7 @@ margin-top: -140px;
 border-radius: 0.5rem;
 
 
+
 input {
      display: flex ;
      flex-direction: column;
@@ -51,6 +52,19 @@ input {
  h3 {
    margin-left: 110px;
  }
+ 
+a {
+    margin: 0 auto;
+    margin-top: 5px;
+    color: #1877f2;
+    cursor: pointer;
+    text-decoration: none;
+
+     &:hover {
+        text-decoration: underline;
+       
+    }
+}
 
  button {
     width: 370px;
