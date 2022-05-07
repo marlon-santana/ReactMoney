@@ -91,7 +91,7 @@ export function App() {
     < GlobalStyle />
     <Dashboard />
 
-    <Link to= '/Home'>HOME</Link>
+    <Link to= '/'>HOME</Link>
     <Outlet/>
   
     <TransactionModal

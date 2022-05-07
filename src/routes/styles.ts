@@ -66,6 +66,7 @@ a {
     }
 }
 
+
  button {
     width: 370px;
     padding: 0 1.5rem;

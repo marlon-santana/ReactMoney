@@ -34,6 +34,15 @@ table {
             color: var(--red);
         }
 
+        img {
+            width: 15px;
+            height: 15px;
+             &:hover {
+                 cursor: pointer;
+                 opacity: 0.6;
+             }
+        }
+
     }
 
 }

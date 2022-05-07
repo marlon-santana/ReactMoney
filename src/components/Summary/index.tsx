@@ -4,6 +4,7 @@ import  outcomeIcon   from "../../assets/outcome.svg"
 import  total   from "../../assets/total.svg"
 import { useContext } from "react"
 import { TransactionsContext, useTransactions } from "../../hooks/useTransationsContext"
+import { motion } from "framer-motion"
 
 
 export function Summary () {
@@ -44,7 +45,6 @@ export function Summary () {
                  }).format(summary.deposits)}
             </strong>
         </div>
-
         <div>
             <header>
                 <p>Saidas</p>

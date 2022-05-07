@@ -1,20 +1,18 @@
 
-import { useContext } from 'react';
-import { TransactionsContext, useTransactions } from '../../hooks/useTransationsContext';
+import {  useTransactions } from '../../hooks/useTransationsContext';
 import { Container } from './style';
+import Delete from '../../assets/excluir.png';
+import { useState } from 'react';
 
 
   
-   function formattedDate(value: Date) {
-        return new Intl.DateTimeFormat("pt-BR").format(new Date(value));
-      }
-
+interface ItemProps {
+    transaction: string,
+}
 export function TransactionsTable () {
+    const {transactions }  = useTransactions();
 
-
-      
-    
-    const {transactions }  = useTransactions();;
+ const [transaction, setTransaction ] = useState(true)    
 
     return (
         <Container>
@@ -44,6 +42,11 @@ export function TransactionsTable () {
                                 new Date(transaction.createdAt),
                                 
                                  )}
+                             </td>
+                             <td>
+                                 <img src={Delete}
+                                 onClick={() => setTransaction(false)}
+                                 ></img>
                              </td>
                         </tr>
 
