@@ -23,7 +23,7 @@ export function Home() {
             <h3>Bem vindo(a)</h3>
             <input placeholder="login"/>
             <input placeholder="senha"/>
-            <Link to= '/'> <button>ENTRAR</button></Link>
+            <Link to= '*'> <button>ENTRAR</button></Link>
         </form>
         <a>Cadastrar senha</a>
         </FormContainer>
