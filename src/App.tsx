@@ -21,7 +21,8 @@ import dark from "./styles/themes/dark";
 
 createServer({
   models: {
-    transaction: Model  //cria entidade de banco de dados chamada transaction
+    transaction: Model,  //cria entidade de banco de dados chamada transaction
+    register: Model
   },
 
   seeds(server) {
@@ -38,7 +39,10 @@ createServer({
               category: 'lazer',
               amount: 5000,
               createdAt: new Date('2021-04-10 10:00:00') })
+
     },
+
+
 
 
   routes() {

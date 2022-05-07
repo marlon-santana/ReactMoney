@@ -10,7 +10,7 @@ interface Transaction {
     amount: number;
     category: string;
     type: string;
-    createdAt: String;
+    createdAt: number;
 }
 
 interface TransactionInput {

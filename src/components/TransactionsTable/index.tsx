@@ -4,10 +4,16 @@ import { TransactionsContext, useTransactions } from '../../hooks/useTransations
 import { Container } from './style';
 
 
-
+  
+   function formattedDate(value: Date) {
+        return new Intl.DateTimeFormat("pt-BR").format(new Date(value));
+      }
 
 export function TransactionsTable () {
 
+
+      
+    
     const {transactions }  = useTransactions();;
 
     return (
@@ -34,8 +40,10 @@ export function TransactionsTable () {
                             </td>
                             <td>{transaction.category}</td>
                             <td>
-                                {transaction.createdAt}
-                               
+                            {new Intl.DateTimeFormat('pt-BR').format(
+                                new Date(transaction.createdAt),
+                                
+                                 )}
                              </td>
                         </tr>
 
