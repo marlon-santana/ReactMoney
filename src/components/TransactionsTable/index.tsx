@@ -2,17 +2,27 @@
 import {  useTransactions } from '../../hooks/useTransationsContext';
 import { Container } from './style';
 import Delete from '../../assets/excluir.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Button } from '@material-ui/core';
 
 
-  
-interface ItemProps {
-    transaction: string,
-}
+
+
 export function TransactionsTable () {
     const {transactions }  = useTransactions();
 
- const [transaction, setTransaction ] = useState(true)    
+    const [item, setItem] = useState('')
+    const [id, setId] = useState(0)
+
+function HandleDelete(id: number) {
+
+    const filtered = transactions.filter(item => item.id === id)
+ 
+        setId(filtered[0].id)
+        setItem(filtered[0].id === id ? 'apagado' : '')
+     
+}  
+
 
     return (
         <Container>
@@ -26,10 +36,13 @@ export function TransactionsTable () {
                     </tr>
                     </thead>
                     <tbody>
+                     
                     {transactions.map(transaction => {
+                        console.log(transaction)
                         return (
-                        <tr key={transaction.id}>
-                            <td>{transaction.title}</td>
+                           
+                        <tr className={item} key={transaction.id}  >
+                            <td >{transaction.title}</td>
                             <td className={transaction.type}>
                                 {new Intl.NumberFormat('pt-BR', {
                                     style: 'currency',
@@ -42,20 +55,23 @@ export function TransactionsTable () {
                                 new Date(transaction.createdAt),
                                 
                                  )}
-                             </td>
+                             </td> 
+                            
                              <td>
-                                 <img src={Delete}
-                                 onClick={() => setTransaction(false)}
-                                 ></img>
+                                 <Button size={"small"}  style={{ borderRadius: '50%' }}
+                                 onClick={() => HandleDelete(transaction.id) }
+                                 >
+                                     <img src={Delete}></img>
+                                 </Button>
                              </td>
                         </tr>
-
+                    
                         )
+                       
                     })}
-                   
                     </tbody>
                
             </table>
         </Container>
-    )
+    ) 
 }

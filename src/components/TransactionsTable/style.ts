@@ -17,6 +17,7 @@ table {
         line-height: 1.5rem;
 
     }
+   
     td {
         padding: 1rem 2rem;
         border: 0;
@@ -41,9 +42,15 @@ table {
                  cursor: pointer;
                  opacity: 0.6;
              }
+             
         }
 
     }
+    .apagado {
+            display: none ;
+        }
+       
+      
 
 }
 

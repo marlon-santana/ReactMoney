@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import Cofre from '../assets/cofre.png';
 
 
 interface Theme {
@@ -50,6 +51,7 @@ html {
 body {
     background: var(--background);
     --webkit-font-smoothing: antialiased;
+  
     
 }
 button {

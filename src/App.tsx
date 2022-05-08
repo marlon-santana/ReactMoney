@@ -53,12 +53,14 @@ createServer({
 
     this.post('/transactions', (schema,request) => { //rota de post que manda o payload no corpo da req
       const data = JSON.parse(request.requestBody)
+      console.log(schema)
+
       return  schema.create('transaction',data)  // cria um arquivo novo no model transactions com obj data.
         
     })
   }
+  
 })
-
 
 export function App() {
 
