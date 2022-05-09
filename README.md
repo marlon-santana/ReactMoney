@@ -45,8 +45,8 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [Material Ui icons](https://mui.com/pt/material-ui/material-icons/)
 
 <br>
-<p>Adiconado tela de login</p>
-<img src="https://github.com/marlon-santana/ReactMoney/blob/master/src/assets/formImage.JPG"/>
+<p>Adicionado tela de login</p>
+<img src="https://github.com/marlon-santana/ReactMoney/blob/master/src/assets/formImage.JPG">
 
 ## Instalação e uso
 
