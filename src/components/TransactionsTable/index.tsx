@@ -12,7 +12,7 @@ export function TransactionsTable () {
     const {transactions }  = useTransactions();
 
     const [item, setItem] = useState('')
-    const [id, setId] = useState(0)
+    const [id, setId] = useState({})
 
 function HandleDelete(id: number) {
 
@@ -38,7 +38,7 @@ function HandleDelete(id: number) {
                     <tbody>
                      
                     {transactions.map(transaction => {
-                        console.log(transaction)
+                      
                         return (
                            
                         <tr className={item} key={transaction.id}  >
@@ -65,7 +65,7 @@ function HandleDelete(id: number) {
                                  </Button>
                              </td>
                         </tr>
-                    
+                        
                         )
                        
                     })}
