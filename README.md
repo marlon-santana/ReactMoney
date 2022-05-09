@@ -41,8 +41,12 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [MirageJS](https://miragejs.com/)
 - [Axios](https://github.com/axios/axios)
 - [Polished](https://polished.js.org/)
+- [React-router-dom](https://reactrouter.com/)
+- [Material Ui icons](https://mui.com/pt/material-ui/material-icons/)
 
 <br>
+<p>Adiconado tela de login</p>
+<img></img>
 
 ## Instalação e uso
 
