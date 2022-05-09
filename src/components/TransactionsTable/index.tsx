@@ -2,26 +2,26 @@
 import {  useTransactions } from '../../hooks/useTransationsContext';
 import { Container } from './style';
 import Delete from '../../assets/excluir.png';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@material-ui/core';
+import axios from 'axios';
 
 
 
 
 export function TransactionsTable () {
     const {transactions }  = useTransactions();
+    const [delTransaction,setDelTransaction ] = useState({})
+   
 
-    const [item, setItem] = useState('')
-    const [id, setId] = useState({})
-
-function HandleDelete(id: number) {
-
-    const filtered = transactions.filter(item => item.id === id)
- 
-        setId(filtered[0].id)
-        setItem(filtered[0].id === id ? 'apagado' : '')
-     
-}  
+    function deletePost() {
+        axios
+          .delete('http://localhost:3000/api/transactions')
+          .then(() => {
+            alert("Post deleted!");
+            setDelTransaction({})
+          });
+      }
 
 
     return (
@@ -38,10 +38,10 @@ function HandleDelete(id: number) {
                     <tbody>
                      
                     {transactions.map(transaction => {
-                      
+                    
                         return (
                            
-                        <tr className={item} key={transaction.id}  >
+                        <tr  key={transaction.id}  >
                             <td >{transaction.title}</td>
                             <td className={transaction.type}>
                                 {new Intl.NumberFormat('pt-BR', {
@@ -59,7 +59,16 @@ function HandleDelete(id: number) {
                             
                              <td>
                                  <Button size={"small"}  style={{ borderRadius: '50%' }}
-                                 onClick={() => HandleDelete(transaction.id) }
+                                 onClick={ () => {
+                                    const filtered = transactions.filter(item => item.id === transaction.id)
+                                    if (filtered[0].id === transaction.id){
+                                        deletePost()
+                                        
+                                    }
+                                       
+                                   
+                                    
+                                 } }
                                  >
                                      <img src={Delete}></img>
                                  </Button>

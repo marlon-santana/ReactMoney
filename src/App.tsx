@@ -22,7 +22,6 @@ import dark from "./styles/themes/dark";
 createServer({
   models: {
     transaction: Model,  //cria entidade de banco de dados chamada transaction
-    register: Model
   },
 
   seeds(server) {
@@ -58,6 +57,13 @@ createServer({
       return  schema.create('transaction',data)  // cria um arquivo novo no model transactions com obj data.
         
     })
+    this.del('transactions')
+
+    // this.del('/transactions', (schema, request) => {
+      
+    
+    //   schema.transaction.find(transaction).destroy()
+    // })
   }
   
 })

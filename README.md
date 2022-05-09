@@ -37,7 +37,6 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Styled Components](https://styled-components.com/)
 - [MirageJS](https://miragejs.com/)
 - [Axios](https://github.com/axios/axios)
 - [Polished](https://polished.js.org/)
