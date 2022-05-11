@@ -48,27 +48,23 @@ createServer({
     this.namespace = 'api';            // inicio na rota
     this.get('/transactions', () => {  // rota de get que devolve todas as transactions salvas no model transaction.
       return this.schema.all('transaction')
-    })
-
+    });
+  
     this.post('/transactions', (schema,request) => { //rota de post que manda o payload no corpo da req
       const data = JSON.parse(request.requestBody)
       console.log(schema)
 
       return  schema.create('transaction',data)  // cria um arquivo novo no model transactions com obj data.
-        
-    })
-    // this.delete("/transactions/:id", (transaction, request) => {
-    //  let id = request.params.id 
-    //   return transaction.find(transaction).destroy()})
-
-    // this.del('/transactions', (schema, request) => {
-      
     
-    //   schema.transaction.find(transaction).destroy()
-    // })
+    });
+    this.delete ('/transactions: id', ((schema, request)=> {
+       let id = request.params.id;
+        return schema.transactions.find(id).destroy ()
+       
+       }))
   }
-  
-})
+});
+
 
 export function App() {
 

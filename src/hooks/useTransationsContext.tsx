@@ -64,6 +64,8 @@ export const TransactionsContext = createContext<TransactionContextData>({} as T
              ])
         }
 
+        
+
         return (
             <TransactionsContext.Provider value={{transactions, createTransactions}}>
                  {children }
