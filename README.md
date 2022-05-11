@@ -3,7 +3,7 @@
 <p>
   <img src="https://img.shields.io/badge/made%20by-MARLON%20SANTANA-ff512f?style=flat-square">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/marlon-santana/dtmoney?color=ff512f&style=flat-square">
-  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/marlon-santana/dtmoney?color=ff512f&style=flat-square">
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/marlon-santana/dtmoney?color=rgb(51, 204, 149)f&style=flat-square">
   <a href="https://opensource.org/licenses/MIT">
     <img alt="License" src="https://img.shields.io/badge/license-MIT-ff512f?style=flat-square">
   </a>
