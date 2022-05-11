@@ -15,6 +15,7 @@ table {
         padding: 1rem 2rem;
         text-align: left;
         line-height: 1.5rem;
+       
 
     }
    
@@ -33,7 +34,9 @@ table {
         }
         &.withdraw {
             color: var(--red);
+           
         }
+       
 
         img {
             width: 15px;
@@ -44,12 +47,12 @@ table {
              }
              
         }
+       
 
     }
-    .apagado {
-            display: none ;
-        }
-       
+   
+   
+  
       
 
 }

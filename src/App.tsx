@@ -57,7 +57,9 @@ createServer({
       return  schema.create('transaction',data)  // cria um arquivo novo no model transactions com obj data.
         
     })
-    this.del('transactions')
+    // this.delete("/transactions/:id", (transaction, request) => {
+    //  let id = request.params.id 
+    //   return transaction.find(transaction).destroy()})
 
     // this.del('/transactions', (schema, request) => {
       
