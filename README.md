@@ -30,6 +30,16 @@ O dt money é uma alternativa simples e eficaz para gerenciar suas finanças, pe
 
 <br>
 
+## Implementações a serem adicionadas
+* Responsividade.
+* Thema Dark/Light.
+* Função de deletar items.
+* Auth no login.
+* Consumo de api node.
+* Banco de dados.
+* Gerar relatórios.
+* Add olá usuário em tela.
+
 
 ## Tecnologias
 
