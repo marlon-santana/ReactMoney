@@ -42,7 +42,7 @@ export const TransactionsContext = createContext<TransactionContextData>({} as T
   export function TransactionsProvider ({children}: ProviderProps)  {
 
         const [transactions, setTransactions ] = useState<Transaction[]>([])
-        const [delTransaction,setDelTransaction ] = useState<Transaction[]>([])
+        
 
         useEffect(() => { 
             api.get('http://localhost:3000/api/transactions')

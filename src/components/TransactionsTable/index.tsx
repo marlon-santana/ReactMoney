@@ -2,9 +2,9 @@
 import {  useTransactions } from '../../hooks/useTransationsContext';
 import { Container } from './style';
 import Delete from '../../assets/excluir.png';
-import { useEffect, useState } from 'react';
 import { Button } from '@material-ui/core';
 import axios from 'axios';
+import { useState } from 'react';
 
 
 
@@ -12,19 +12,21 @@ import axios from 'axios';
 
 export function TransactionsTable () {
     const {transactions }  = useTransactions();
-    const [delTransaction,setDelTransaction ] = useState({})
+    const [item, setItem] = useState(transactions)
    
    
-
-    function deletePost() {
+   async function deletePost(id:number) {
+        const Id = id;
         axios
-          .delete('http://localhost:3000/api/transactions')
-          .then(() => {
-            alert("Post deleted!");
-           //setDelTransaction([])
+          .delete(`http://localhost:3000/api/transactions/${Id}`)
+          .then((response) => {
+            console.log("Post deleted!",response);
+            //setItem()
+           
           });
       }
-  
+
+     
 
     return (
         <Container>
@@ -61,8 +63,8 @@ export function TransactionsTable () {
                              <td >
                                  <Button size={"small"}  style={{ borderRadius: '50%' }}
                                  onClick={ () => {
-                                        setDelTransaction(transaction)
-                                        console.log(delTransaction)
+                                     deletePost(transaction.id);
+                                        
                                     
                                  } }
                                  >

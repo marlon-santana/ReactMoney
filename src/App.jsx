@@ -24,22 +24,22 @@ createServer({
     transaction: Model,  //cria entidade de banco de dados chamada transaction
   },
 
-  seeds(server) {
-    server.create("transaction", {  id:'1',
-              title: 'desenvolvimento de softwear',
-              type: 'deposit',
-              category: 'freelancer',
-              amount: 2000,
-              createdAt: new Date('2021-02-12 09:00:00') })
+  // seeds(server) {
+  //   server.create("transaction", {  id:'1',
+  //             title: 'desenvolvimento de softwear',
+  //             type: 'deposit',
+  //             category: 'freelancer',
+  //             amount: 2000,
+  //             createdAt: new Date('2021-02-12 09:00:00') })
 
-    server.create("transaction", {  id:'2',
-              title: 'playstation',
-              type: 'withdraw',
-              category: 'lazer',
-              amount: 5000,
-              createdAt: new Date('2021-04-10 10:00:00') })
+  //   server.create("transaction", {  id:'2',
+  //             title: 'playstation',
+  //             type: 'withdraw',
+  //             category: 'lazer',
+  //             amount: 5000,
+  //             createdAt: new Date('2021-04-10 10:00:00') })
 
-    },
+  //   },
 
 
 
@@ -57,9 +57,14 @@ createServer({
       return  schema.create('transaction',data)  // cria um arquivo novo no model transactions com obj data.
     
     });
-    this.delete ('/transactions: id', ((schema, request)=> {
+   
+    this.delete ('/transactions/:id', ((schema, request)=> {
        let id = request.params.id;
-        return schema.transactions.find(id).destroy ()
+       console.log('chegou aqui',id,request)
+       
+        return schema.transactions.find(id).destroy()
+        
+        
        
        }))
   }
