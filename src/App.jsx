@@ -60,7 +60,6 @@ createServer({
    
     this.delete ('/transactions/:id', ((schema, request)=> {
        let id = request.params.id;
-       console.log('chegou aqui',id,request)
        
         return schema.transactions.find(id).destroy()
         
