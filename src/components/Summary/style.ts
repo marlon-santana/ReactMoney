@@ -27,10 +27,11 @@ div {
         font-weight: 500;
         line-height: 3rem;
         display: block;
+        color: ${props => props.theme.colors.texttitle};
     }
 
     &.hightlight-background {
-        background: var(--green);
+        background: #33cc95;
         color: #fff;
     }
 }
