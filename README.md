@@ -59,8 +59,8 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 <img src="https://github.com/marlon-santana/ReactMoney/blob/master/src/assets/formImage.JPG">
 <br>
 <p>Adicionado thema dark</p>
-<img src="https://github.com/marlon-santana/ReactMoney/blob/master/src/assets/formImage.JPG">
-<img src="https://github.com/marlon-santana/ReactMoney/blob/master/src/assets/formImage.JPG">
+<img src="https://github.com/marlon-santana/ReactMoney/blob/master/src/assets/dark.JPG">
+
 ## Instalação e uso
 
 ```bash
