@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.header `
 
-background: ${props => props.theme.colors.blue};
+background: ${props => props.theme.colors.bluelight};
 
 `
 
@@ -31,7 +31,7 @@ max-width: 1120px;
      margin-left: 10px;
      font-size:  1rem;
      color: #fff ;
-     background: var(--blue-light);
+     background: ${props => props.theme.colors.buttom};
      border: 0;
      padding: 0 2rem;
      border-radius: 0.25rem;

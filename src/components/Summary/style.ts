@@ -9,7 +9,7 @@ gap: 2rem;
 margin-top: -10rem ;
 
 div {
-    background: white;
+    background:  ${props => props.theme.colors.sumary};
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
     color:   ${props => props.theme.colors.texttitle};//var(--text-title);
@@ -31,7 +31,7 @@ div {
     }
 
     &.hightlight-background {
-        background: #33cc95;
+        background: ${props => props.theme.colors.total};
         color: #fff;
     }
 }

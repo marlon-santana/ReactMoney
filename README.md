@@ -57,7 +57,10 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 <br>
 <p>Adicionado tela de login</p>
 <img src="https://github.com/marlon-santana/ReactMoney/blob/master/src/assets/formImage.JPG">
-
+<br>
+<p>Adicionado thema dark</p>
+<img src="https://github.com/marlon-santana/ReactMoney/blob/master/src/assets/formImage.JPG">
+<img src="https://github.com/marlon-santana/ReactMoney/blob/master/src/assets/formImage.JPG">
 ## Instalação e uso
 
 ```bash

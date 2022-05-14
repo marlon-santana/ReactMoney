@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 export const Container = styled.div `
 
+h1, h2, h3, h4, h5, h6, strong {
+    font-weight: 600;
+  }
+
 margin-top: 4rem;
 
 table {
@@ -22,18 +26,20 @@ table {
     td {
         padding: 1rem 2rem;
         border: 0;
-        background: var(--shape);
-        color: var(--text-body);
+        background: ${props => props.theme.colors.sumary};
+        color: ${props => props.theme.colors.text};///////////////////////////////////
         border-radius: 0.25rem;
 
         &:first-child {
-            color: var(--text-title);
+            color: ${props => props.theme.colors.text}
         }
         &.deposit {
-            color: var(--green);
+            font-weight: 600;
+            color:  ${props => props.theme.colors.deposit}
         }
         &.withdraw {
-            color: var(--red);
+            font-weight: 600;
+            color: ${props => props.theme.colors.withdraw}
            
         }
        
