@@ -60,6 +60,8 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 <br>
 <p>Adicionado thema dark</p>
 <img src="https://github.com/marlon-santana/ReactMoney/blob/master/src/assets/dark.JPG">
+<img src="https://github.com/marlon-santana/ReactMoney/blob/master/src/assets/tema%20light.JPG">
+
 
 ## Instalação e uso
 
