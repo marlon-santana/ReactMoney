@@ -40,6 +40,7 @@ O dt money é uma alternativa simples e eficaz para gerenciar suas finanças, pe
 * Gerar relatórios.
 * Add olá usuário em tela.
 * Mudar a logo.
+* chat.
 
 
 ## Tecnologias
