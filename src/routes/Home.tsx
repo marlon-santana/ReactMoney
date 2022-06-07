@@ -3,7 +3,7 @@ import { FormEvent, useState } from 'react';
 import { Link } from "react-router-dom";
 import  LogoImg  from "../assets/logo.svg";
 import { Container, Content, WrapperContainer,FormContainer } from "./styles";
-import { motion } from "framer-motion";
+
 
 
 

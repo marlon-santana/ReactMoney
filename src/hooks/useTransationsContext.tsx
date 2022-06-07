@@ -1,3 +1,4 @@
+import { Item } from "framer-motion/types/components/Reorder/Item";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import { api } from "../services/api";
 
@@ -45,15 +46,16 @@ export const TransactionsContext = createContext<TransactionContextData>({} as T
         
 
         useEffect(() => { 
-            api.get('http://localhost:3000/api/transactions')
-            .then(response => setTransactions(response.data.transactions))
-
+            api.get('https://api-restifull.herokuapp.com/transaction')
+            .then(response => {console.log(response.data[0]) 
+                setTransactions(response.data.transaction)})
+                
         },[]);
 
 
         async function createTransactions (transactionInput: TransactionInput ) {
            
-             const response = await api.post('/transactions',{
+             const response = await api.post('/transaction',{
                  ...transactionInput,
                 createdAt: new Date()
             })
