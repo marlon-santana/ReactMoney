@@ -1,11 +1,10 @@
-import { Item } from "framer-motion/types/components/Reorder/Item";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import { api } from "../services/api";
 
 
 
 interface Transaction {
-    id: number;
+    _id: number;
     title: String;
     value: Number;
     amount: number;
@@ -47,9 +46,10 @@ export const TransactionsContext = createContext<TransactionContextData>({} as T
 
         useEffect(() => { 
             api.get('https://api-restifull.herokuapp.com/transaction')
-            .then(response => {console.log(response.data[0]) 
-                setTransactions(response.data.transaction)})
-                
+            .then(response => {
+                setTransactions(response.data)})
+        
+
         },[]);
 
 

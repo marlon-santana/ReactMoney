@@ -3,19 +3,34 @@ import {  useTransactions } from '../../hooks/useTransationsContext';
 import { Container } from './style';
 import Delete from '../../assets/excluir.png';
 import { Button } from '@material-ui/core';
+import { useEffect, useState } from 'react';
+import { api } from '../../services/api';
 
 
+interface Transaction {
+    _id: number;
+    title: String;
+    value: Number;
+    amount: number;
+    category: string;
+    type: string;
+    createdAt: number;
+}
 
+export   function TransactionsTable () {
 
+    useEffect(() => { 
+        api.get('https://api-restifull.herokuapp.com/transaction')
+        .then(response =>  {
+           setTransaction(response.data);
+           console.log('aqui',response.data)
+        }
 
-
-
-export function TransactionsTable () {
-    const {transactions }  = useTransactions();
-   
-   
-   
+    )},[]);
+        const [ transaction, setTransaction ] = useState<Transaction[]>([]);
+     //const {transactions }  = useTransactions();
     
+     console.log(transaction)
 
     return (
         <Container>
@@ -29,26 +44,22 @@ export function TransactionsTable () {
                     </tr>
                     </thead>
                     <tbody>
-
-                    {transactions.map(transaction => {
-
+                   
+                    {transaction.map(transactions => {
                         return (
                     
-                        <tr key={transaction.id}>
+                        <tr key={transactions._id}>
                             
-                            <td >{transaction.title}</td>
-                            <td className={transaction.type}>
-                                {new Intl.NumberFormat('pt-BR', {
-                                    style: 'currency',
-                                    currency: 'BRL'
-                                }).format(transaction.amount)}
-                            </td>
-                            <td >{transaction.category}</td>
+                            <td >{transactions.title}</td>
+                            <td className={transactions.type}>
                             <td>
-                            {new Intl.DateTimeFormat('pt-BR').format(
-                                new Date(transaction.createdAt),
-                                
-                                 )}
+                                {transactions.amount}
+                            </td>
+                               
+                            </td>
+                            <td >{transactions.category}</td>
+                            <td>
+                                {transactions.createdAt}
                              </td> 
                              <td >
                                  <Button size={"small"}  style={{ borderRadius: '50%' }}
