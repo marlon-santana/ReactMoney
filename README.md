@@ -26,17 +26,17 @@
 
 ## Sobre o dt money
 
-O dt money é uma alternativa simples e eficaz para gerenciar suas finanças, permitindo o cadastro de entradas, saídas e a organização das mesmas em categorias.
+O dt money é uma alternativa simples e eficaz para gerenciar suas finanças, permitindo o cadastro de entradas, saídas e a organização das mesmas em categorias. Possui API feita em Nodejs e banco de dados Mongodb. 
 
 <br>
 
 ## Implementações a serem adicionadas
 * Responsividade.
-* Thema Dark/Light.
+* Thema Dark/Light. OK
 * Função de deletar items.
 * Auth no login.
-* Consumo de api node.
-* Banco de dados.
+* Consumo de api node. OK
+* Banco de dados. OK
 * Gerar relatórios.
 * Add olá usuário em tela.
 * Mudar a logo.
@@ -54,6 +54,10 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 - [Polished](https://polished.js.org/)
 - [React-router-dom](https://reactrouter.com/)
 - [Material Ui icons](https://mui.com/pt/material-ui/material-icons/)
+- [Mongodb](https://www.npmjs.com/package/mongodb)
+- [Node](https://www.npmjs.com/package/node)
+- [express](https://www.npmjs.com/package/express)
+- [heroku](https://www.npmjs.com/package/heroku)
 
 <br>
 <p>Adicionado tela de login</p>
