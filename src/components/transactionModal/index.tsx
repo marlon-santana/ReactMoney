@@ -3,7 +3,7 @@ import closeIcon from "../../assets/close.svg";
 import incomeIcon from "../../assets/income.svg";
 import outcomeIcon from "../../assets/outcome.svg";
 import Modal from 'react-modal';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import {  useTransactions } from '../../hooks/useTransationsContext';
 
 
@@ -46,7 +46,7 @@ export function TransactionModal ({isOpen, onRequestClose}:TransactionsModalProp
         
         <Modal 
             isOpen={isOpen}
-            onRequestClose={onRequestClose}
+            onRequestClose={() => console.log('fechou aqui')}
             overlayClassName ='react-modal-overlay'
             className = 'react-modal-content'
         >
@@ -111,6 +111,7 @@ export function TransactionModal ({isOpen, onRequestClose}:TransactionsModalProp
 
         <button
         type='submit'
+        onClick={()=> onRequestClose}
         >Cadastrar</button>
         </Container>
 

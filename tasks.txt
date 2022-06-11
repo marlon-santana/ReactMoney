@@ -1,0 +1,2 @@
+- Função de fechar modal após criar transaction não fecha.
+- criar rota delete na api e no front.

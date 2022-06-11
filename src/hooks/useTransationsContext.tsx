@@ -10,7 +10,7 @@ interface Transaction {
     amount: number;
     category: string;
     type: string;
-    createdAt: number;
+    createdAt: String;
 }
 
 interface TransactionInput {
@@ -23,7 +23,7 @@ interface TransactionInput {
 
 
 interface TransactionContextData {
-    transactions: Transaction[];
+    transaction: Transaction[];
     createTransactions: (transaction : TransactionInput) => Promise<void>;
 
     
@@ -41,13 +41,13 @@ export const TransactionsContext = createContext<TransactionContextData>({} as T
 
   export function TransactionsProvider ({children}: ProviderProps)  {
 
-        const [transactions, setTransactions ] = useState<Transaction[]>([])
+        const [transaction, setTransaction ] = useState<Transaction[]>([])
         
 
         useEffect(() => { 
             api.get('https://api-restifull.herokuapp.com/transaction')
             .then(response => {
-                setTransactions(response.data)})
+                setTransaction(response.data)})
         
 
         },[]);
@@ -55,13 +55,13 @@ export const TransactionsContext = createContext<TransactionContextData>({} as T
 
         async function createTransactions (transactionInput: TransactionInput ) {
            
-             const response = await api.post('/transaction',{
+             const response = await api.post('https://api-restifull.herokuapp.com/transaction',{
                  ...transactionInput,
                 createdAt: new Date()
             })
              const { transaction } = response.data;
-             setTransactions([
-                 ...transactions,
+             setTransaction([
+                 ...transaction,
                  transaction,
              ])
         }
@@ -69,7 +69,7 @@ export const TransactionsContext = createContext<TransactionContextData>({} as T
         
 
         return (
-            <TransactionsContext.Provider value={{transactions, createTransactions}}>
+            <TransactionsContext.Provider value={{transaction, createTransactions}}>
                  {children }
             </TransactionsContext.Provider>
         )

@@ -14,7 +14,7 @@ interface Transaction {
     amount: number;
     category: string;
     type: string;
-    createdAt: number;
+    createdAt: String;
 }
 
 export   function TransactionsTable () {
@@ -30,7 +30,7 @@ export   function TransactionsTable () {
         const [ transaction, setTransaction ] = useState<Transaction[]>([]);
      //const {transactions }  = useTransactions();
     
-     console.log(transaction)
+   
 
     return (
         <Container>
