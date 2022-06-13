@@ -44,9 +44,10 @@ table {
         }
        
 
-        img {
-            width: 15px;
-            height: 15px;
+        .Delete {
+            color: #e52e4d;
+            width: 20px;
+            height: 20px;
              &:hover {
                  cursor: pointer;
                  opacity: 0.6;

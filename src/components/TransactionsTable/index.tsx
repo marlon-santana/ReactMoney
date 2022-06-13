@@ -1,10 +1,9 @@
 
-import {  useTransactions } from '../../hooks/useTransationsContext';
+//import {  useTransactions } from '../../hooks/useTransationsContext';
 import { Container } from './style';
-import Delete from '../../assets/excluir.png';
-import { Button } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import { api } from '../../services/api';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 interface Transaction {
@@ -31,7 +30,7 @@ export   function TransactionsTable () {
     )},[]);
         
 
-        function deletePost(transactionId: Number) {
+        function deleteTransaction(transactionId: Number) {
               let id = transactionId;
 
         api.delete(`https://api-restifull.herokuapp.com/transaction/${id}`)
@@ -73,12 +72,9 @@ export   function TransactionsTable () {
                                 {transactions.createdAt}
                              </td> 
                              <td >
-                                 <Button size={"small"}  style={{ borderRadius: '50%' }}
-                                 onClick={() => {deletePost(transactions._id)}  }
-                    
-                                 >
-                                     <img src={Delete}></img>
-                                 </Button>
+                                
+                                  <DeleteIcon className='Delete'
+                                     onClick={() => {deleteTransaction(transactions._id)}  }/>
                              </td>
                         </tr>
                     
