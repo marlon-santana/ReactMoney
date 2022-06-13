@@ -19,6 +19,8 @@ interface Transaction {
 
 export   function TransactionsTable () {
 
+    const [ transaction, setTransaction ] = useState<Transaction[]>([]);
+
     useEffect(() => { 
         api.get('https://api-restifull.herokuapp.com/transaction')
         .then(response =>  {
@@ -27,8 +29,17 @@ export   function TransactionsTable () {
         }
 
     )},[]);
-        const [ transaction, setTransaction ] = useState<Transaction[]>([]);
-     //const {transactions }  = useTransactions();
+        
+
+        function deletePost(transactionId: Number) {
+              let id = transactionId;
+
+        api.delete(`https://api-restifull.herokuapp.com/transaction/${id}`)
+              .then(() => {
+                alert("transaction deleted!");
+                
+              });
+          }
     
    
 
@@ -63,6 +74,7 @@ export   function TransactionsTable () {
                              </td> 
                              <td >
                                  <Button size={"small"}  style={{ borderRadius: '50%' }}
+                                 onClick={() => {deletePost(transactions._id)}  }
                     
                                  >
                                      <img src={Delete}></img>
