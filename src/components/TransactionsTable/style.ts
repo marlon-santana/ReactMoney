@@ -27,7 +27,7 @@ table {
         padding: 10px 10px;
         border: 0;
         background: ${props => props.theme.colors.sumary};
-        color: ${props => props.theme.colors.text};///////////////////////////////////
+        color: ${props => props.theme.colors.text};
         border-radius: 5px;
 
         &:first-child {
